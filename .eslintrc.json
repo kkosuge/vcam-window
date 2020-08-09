@@ -4,12 +4,26 @@
     "es6": true,
     "node": true
   },
-    "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/eslint-recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:import/errors",
-      "plugin:import/warnings"
-    ],
-    "parser": "@typescript-eslint/parser"
+  "plugins": [
+    "react",
+    "react-hooks"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "import/no-unresolved": "off",
+    "react/jsx-uses-vars": 1,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "semi": ["error", "never"],
+    "quotes": ["error", "single"],
+    "no-trailing-spaces": "error"
+  }
 }

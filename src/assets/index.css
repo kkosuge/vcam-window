@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+}
+#root {
+  -webkit-app-region: drag;
+  width: 1280px;
+  height: 720px;
+}
