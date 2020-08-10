@@ -122,5 +122,8 @@ export const Root: React.FC = () => {
     )
   }
 
-  return <div>please allow camera access</div>
+  return <>
+    <div>please allow camera access</div>
+    { preferences }
+  </>
 }
