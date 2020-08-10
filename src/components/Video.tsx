@@ -16,7 +16,7 @@ export const Video: React.FC<Props> = ({ constraints }) => {
   }, [videoRef, stream])
 
   if (stream) {
-    return <video width={1280} height={720} ref={videoRef} autoPlay></video>
+    return <video ref={videoRef} autoPlay></video>
   } else {
     return <div>loading...</div>
   }

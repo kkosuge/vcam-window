@@ -10,7 +10,7 @@ const Preference = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 0.8;
+  opacity: 0.9;
   padding: 20px;
   background: #fff;
   h1 {
@@ -25,9 +25,13 @@ const Preference = styled.div`
   }
 `
 
+type WindowSize = { width: number; height: number }
+const windowSizes: WindowSize[] = [{ width: 1280, height: 720 }, { width: 640, height:  360 }]
+
 export const Root: React.FC = () => {
   const [devices, setDevices] = useState<MediaDeviceInfo[]>([])
   const [device, setDevice] = useState<MediaDeviceInfo | null>(null)
+  const [windowSize, setWindowSize] = useState<WindowSize>({ width: 1280, height: 720 })
   const [showVideo, setShowVideo] = useState(true)
   const { screen, closePreferences } = useMenu()
 
@@ -53,6 +57,13 @@ export const Root: React.FC = () => {
     reloadVideo()
   }
 
+  const onChangeWindowSizeSelection = (sizeJson: string) => {
+    const size = JSON.parse(sizeJson) as WindowSize
+    setWindowSize(size)
+    window.resizeTo(size.width, size.height)
+    reloadVideo()
+  }
+
   const preferences = (
     <Preference>
       <h1>Preference</h1>
@@ -73,6 +84,22 @@ export const Root: React.FC = () => {
         </Select>
       </div>
       <div className="group">
+        <label>Window Size</label>
+        <Select
+          placeholder="Choose one"
+          onChange={onChangeWindowSizeSelection}
+          disableMatchWidth
+        >
+          {windowSizes.map((size) => {
+            return (
+              <Select.Option value={JSON.stringify(size)} key={size.width}>
+                {size.width} x {size.height}
+              </Select.Option>
+            )
+          })}
+        </Select>
+      </div>
+      <div className="group">
         <Button type="secondary" onClick={closePreferences}>
           Close
         </Button>
@@ -83,6 +110,7 @@ export const Root: React.FC = () => {
   if (device) {
     const constraints: MediaStreamConstraints = {
       video: {
+        ...windowSize,
         deviceId: device.deviceId,
       },
     }
