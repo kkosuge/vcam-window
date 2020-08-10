@@ -22,6 +22,7 @@ I don't have a release version of the build available at this time. However, you
 
 ![](screenshots/about-mmhmm.png)
 ![](screenshots/preference.png)
+![](screenshots/teams.png)
 
 ## License
 
