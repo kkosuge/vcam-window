@@ -2,7 +2,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Root } from './components/Root'
+import { ZeitProvider, CssBaseline } from '@zeit-ui/react'
 
 import './assets/index.css'
 
-ReactDOM.render(<Root />, document.getElementById('root'))
+const Application = (
+  <ZeitProvider>
+    <CssBaseline />
+    <Root />
+  </ZeitProvider>
+)
+
+ReactDOM.render(Application, document.getElementById('root'))

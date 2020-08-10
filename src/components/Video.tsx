@@ -13,7 +13,6 @@ export const Video: React.FC<Props> = ({ constraints }) => {
     if (videoRef && stream) {
       (videoRef.current as HTMLVideoElement).srcObject = stream
     }
-
   }, [videoRef, stream])
 
   if (stream) {
