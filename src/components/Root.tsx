@@ -122,5 +122,5 @@ export const Root: React.FC = () => {
     )
   }
 
-  return <div>empty</div>
+  return <div>please allow camera access</div>
 }
