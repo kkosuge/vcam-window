@@ -6,6 +6,12 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
   app.quit()
 }
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+require('update-electron-app')({
+  repo: 'kkosuge/vcam-window',
+  updateInterval: '3 hour',
+})
+
 const createWindow = (): void => {
   const mainWindow = new BrowserWindow({
     width: 1280,

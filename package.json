@@ -1,8 +1,8 @@
 {
   "name": "vcam-window",
-  "productName": "vcam-window",
+  "productName": "VCam Window",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Webcam Borderless Viewer",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
@@ -20,8 +20,34 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "icon": "src/assets/icon.icns"
+        "icon": "src/assets/icon.icns",
+        "appBundleId": "club.pasokon.vcam-window",
+        "usageDescription": {
+          "Camera": "This app needs access to the camera"
+        },
+        "osxSign": {
+          "identity": "Developer ID Application: Kosuge Kazuya (5NREMQH7AB)",
+          "hardened-runtime": true,
+          "entitlements": "./entitlements.plist",
+          "entitlements-inherit": "./entitlements.plist"
+        },
+        "osxNotarize": {
+          "appleId": "ksgkzy+developer@gmail.com",
+          "appleIdPassword": "@keychain:AC_PASSWORD"
+        }
       },
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "kkosuge",
+              "name": "vcam-window"
+            },
+            "prerelease": true
+          }
+        }
+      ],
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
@@ -72,6 +98,7 @@
     "@electron-forge/maker-squirrel": "6.0.0-beta.52",
     "@electron-forge/maker-zip": "6.0.0-beta.52",
     "@electron-forge/plugin-webpack": "6.0.0-beta.52",
+    "@electron-forge/publisher-github": "^6.0.0-beta.52",
     "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
     "@types/styled-components": "^5.1.2",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
@@ -96,6 +123,7 @@
     "electron-squirrel-startup": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "update-electron-app": "^1.5.0"
   }
 }
