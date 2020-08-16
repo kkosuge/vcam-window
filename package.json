@@ -1,7 +1,7 @@
 {
   "name": "vcam-window",
   "productName": "VCam Window",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Webcam Borderless Viewer",
   "main": ".webpack/main",
   "scripts": {
