@@ -26,6 +26,10 @@ const createWindow = (): void => {
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
+  // Open the DevTools for Windows(VM).
+  // const devtools = new BrowserWindow()
+  // mainWindow.webContents.setDevToolsWebContents(devtools.webContents)
+  // mainWindow.webContents.openDevTools({ mode: 'detach' })
 }
 
 // This method will be called when Electron has finished
