@@ -16,7 +16,7 @@ const createWindow = (): void => {
   const mainWindow = new BrowserWindow({
     width: 1280,
     height: 720,
-    frame: false,
+    frame: !(process.platform === 'darwin'),
     webPreferences: {
       nodeIntegration: true
     }
