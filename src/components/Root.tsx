@@ -3,6 +3,7 @@ import { Video } from './Video'
 import { useMenu } from '../hooks/useMenu'
 import styled from 'styled-components'
 import { Button, Select } from '@zeit-ui/react'
+import { remote } from 'electron'
 
 const Preference = styled.div`
   position: fixed;
@@ -22,6 +23,11 @@ const Preference = styled.div`
       display: block;
       font-weight: bold;
     }
+  }
+  .version {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
   }
 `
 
@@ -104,6 +110,7 @@ export const Root: React.FC = () => {
           Close
         </Button>
       </div>
+      <div className="version">v{ remote.app.getVersion() }</div>
     </Preference>
   )
 
