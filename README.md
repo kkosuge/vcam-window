@@ -3,10 +3,10 @@
 </p>
 
 <div align="center">
-  <h1>VCam Window for mmhmm</h1>
+  <h1>VCam Window</h1>
 </div>
 
-I want to use [mmhmm](https://www.mmhmm.app/) streaming input as a presenter in a video conferencing tool (e.g. Microsoft Teams), but I can't use the presentation mode because it is a just virtual camera input. To solve this problem, we need to output the webcam video as an application screen share rather than as a webcam input. This application can display virtual or physical camera video in a frameless window.
+This is just a frameless （virtual） camera viewer.
 
 ## Download
 
@@ -22,7 +22,6 @@ I don't have a release version of the build available at this time. However, you
 
 ![](screenshots/about-mmhmm.png)
 ![](screenshots/preference.png)
-![](screenshots/teams.png)
 
 ## License
 
